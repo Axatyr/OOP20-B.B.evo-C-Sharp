@@ -15,7 +15,5 @@
 
   <ItemGroup>
     <Folder Include="src\" />
-    <Folder Include="src\model\" />
-    <Folder Include="src\controller\" />
   </ItemGroup>
 </Project>
