@@ -1,8 +1,8 @@
 ﻿using System;
-namespace OOP20.src
+namespace Totaro.src
 {
     public interface IComponentInput
     {
-        void Update(GameObject obj, IControllerInput controller);
+        void Update(IGameObject obj, IControllerInput controller);
     }
 }

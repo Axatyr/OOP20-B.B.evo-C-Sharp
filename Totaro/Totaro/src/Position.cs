@@ -1,5 +1,5 @@
 ﻿using System;
-namespace OOP20.src
+namespace Totaro.src
 {
     [Serializable]
     public class Position
@@ -13,7 +13,7 @@ namespace OOP20.src
             Y = y;
         }
 
-        public static Position operator +(Position p1, Position p2)
+        public static Position operator +(Position p1, DirVector p2)
         {
             return new Position(p1.X + p2.X, p1.Y + p2.Y);
         }

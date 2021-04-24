@@ -1,8 +1,8 @@
 ﻿using System;
-namespace OOP20.src
+namespace Totaro.src
 {
     public interface IComponentPhysics
     {
-        void Update(int timeElapsed, GameObject obj);
+        void Update(int timeElapsed, IGameObject obj);
     }
 }

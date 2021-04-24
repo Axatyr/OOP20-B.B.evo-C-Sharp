@@ -1,5 +1,5 @@
 ﻿using System;
-namespace OOP20.src
+namespace Totaro.src
 {
     public interface IControllerInput
     {
