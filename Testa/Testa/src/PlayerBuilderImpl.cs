@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Testa
 {
-    class PlayerBuilderImpl : PlayerBuilder
+    public class PlayerBuilderImpl : PlayerBuilder
     {
         private string alias;
         private int score;

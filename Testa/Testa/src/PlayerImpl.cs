@@ -6,7 +6,7 @@ using System.Text;
 namespace Testa
 {
     [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
-    class PlayerImpl : Player
+    public class PlayerImpl : Player
     {
         private string alias { get; }
         public int score { get; private set; }

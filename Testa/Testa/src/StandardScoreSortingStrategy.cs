@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Testa
 {
-    class StandardScoreSortingStrategy : LeaderboardSortingStrategy
+    public class StandardScoreSortingStrategy : LeaderboardSortingStrategy
     {
         public Dictionary<string, int> SortDictionary(Dictionary<string, int> dictionary)
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Testa
 {
-    class LeaderboardImpl : Leaderboard
+    public class LeaderboardImpl : Leaderboard
     {
         public Dictionary<string, int> ranking { get; set; }
 

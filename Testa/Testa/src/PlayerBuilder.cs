@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Testa
 {
-    interface PlayerBuilder
+    public interface PlayerBuilder
     {
         PlayerBuilder Alias(string alias);
 

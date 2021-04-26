@@ -2,7 +2,7 @@
 
 namespace Testa
 {
-    interface LeaderboardSortingStrategy
+    public interface LeaderboardSortingStrategy
     {
         Dictionary<string, int> SortDictionary(Dictionary<string, int> dictionary);
     }

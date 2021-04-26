@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Testa
 {
-    interface Leaderboard
+    public interface Leaderboard
     {
         void SortByScore(LeaderboardSortingStrategy ls);
 

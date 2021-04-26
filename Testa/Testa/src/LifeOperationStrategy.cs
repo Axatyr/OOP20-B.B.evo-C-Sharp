@@ -1,6 +1,6 @@
 ﻿namespace Testa
 {
-    interface LifeOperationStrategy
+    public interface LifeOperationStrategy
     {
         int LifeOperation(int currentLife, int value, int maxLife);
     }

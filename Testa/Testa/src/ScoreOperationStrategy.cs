@@ -1,6 +1,6 @@
 ﻿namespace Testa
 {
-    interface ScoreOperationStrategy
+    public interface ScoreOperationStrategy
     {
         int ScoreOperation(int currentScore, int value);
     }

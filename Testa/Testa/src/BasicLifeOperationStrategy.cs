@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Testa
 {
-    class BasicLifeOperationStrategy : LifeOperationStrategy
+    public class BasicLifeOperationStrategy : LifeOperationStrategy
     {
         public int LifeOperation(int currentLife, int value, int maxLife)
         {

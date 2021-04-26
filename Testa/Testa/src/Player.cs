@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Testa
 {
-    interface Player
+    public interface Player
     {
         void ScoreOperation(ScoreOperationStrategy operation, int value);
 

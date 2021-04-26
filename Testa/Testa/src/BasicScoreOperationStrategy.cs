@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Testa
 {
-    class BasicScoreOperationStrategy : ScoreOperationStrategy
+    public class BasicScoreOperationStrategy : ScoreOperationStrategy
     {
         public int ScoreOperation(int currentScore, int value)
         {
