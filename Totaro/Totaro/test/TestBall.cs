@@ -39,7 +39,7 @@ namespace Totaro
                                           .Height(10)
                                           .Width(10)
                                           .Speed(10)
-                                          .Path("prova")
+                                          .Path("img/defaultBall.png")
                                           .Build();
             Assert.AreEqual(new Position(10, 10), ball.Position);
             Assert.AreEqual(new DirVector(0, 1), ball.Dir);
@@ -55,7 +55,8 @@ namespace Totaro
             Ball.Builder ballBuilder = new Ball.Builder();
             ballBuilder.Height(10)
                        .Width(10)
-                       .Speed(0.2);
+                       .Speed(0.2)
+                       .Path("img/defaultBall.png");
 
             // north direction
             double py = Math.Sin((Math.PI / 180) * 90);
@@ -127,6 +128,66 @@ namespace Totaro
             foreach (Ball ent in board.GetSceneEntity())
             {
                 Assert.AreEqual(new Position(48, 50), ent.Position);
+            }
+        }
+
+        [Test]
+        public void BallSpeed()
+        {
+            GameBoard world = new GameBoard(new Wall(100, 100));
+            Ball.Builder ballBuilder = new Ball.Builder();
+            ballBuilder.Height(10)
+                       .Width(10)
+                       .Path("img/defaultBall.png");
+            double py = Math.Sin((Math.PI / 180) * 0);
+            double px = Math.Cos((Math.PI / 180) * 0);
+            ballBuilder.Position(new Position(50, 50))
+                       .Direction(new DirVector(px, py));
+            HashSet<Ball> ballContainer = new HashSet<Ball>();
+            ballContainer.Add(ballBuilder.Build());
+            world.SetBalls(ballContainer);
+
+            // 0 speed
+            ballBuilder.Speed(0);
+            world.SetBalls(ballContainer);
+            foreach (Ball ent in world.GetSceneEntity())
+            {
+                Assert.AreEqual(new Position(50, 50), ent.Position);
+            }
+            world.UpdateState(1000);
+            foreach (Ball ent in world.GetSceneEntity())
+            {
+                Assert.AreEqual(new Position(50, 50), ent.Position);
+            }
+
+            // 0.1 speed
+            ballContainer = new HashSet<Ball>();
+            ballBuilder.Speed(0.1);
+            ballContainer.Add(ballBuilder.Build());
+            world.SetBalls(ballContainer);
+            foreach (Ball ent in world.GetSceneEntity())
+            {
+                Assert.AreEqual(new Position(50, 50), ent.Position);
+            }
+            world.UpdateState(10);
+            foreach (Ball ent in world.GetSceneEntity())
+            {
+                Assert.AreEqual(new Position(51, 50), ent.Position);
+            }
+
+            // 1 speed
+            ballContainer = new HashSet<Ball>();
+            ballBuilder.Speed(1);
+            ballContainer.Add(ballBuilder.Build());
+            world.SetBalls(ballContainer);
+            foreach (Ball ent in world.GetSceneEntity())
+            {
+                Assert.AreEqual(new Position(50, 50), ent.Position);
+            }
+            world.UpdateState(10);
+            foreach (Ball ent in world.GetSceneEntity())
+            {
+                Assert.AreEqual(new Position(60, 50), ent.Position);
             }
         }
     }
