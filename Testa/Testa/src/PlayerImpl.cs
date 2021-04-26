@@ -8,10 +8,10 @@ namespace Testa
     [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
     public class PlayerImpl : Player
     {
-        private string alias { get; }
+        public string alias { get; }
         public int score { get; private set; }
         public int life { get; private set; }
-        private int maxNumberOfLife { get; set; }
+        public int maxNumberOfLife { get; private set; }
 
         public PlayerImpl(string alias, int score, int life, int maxnumberOfLife)
         {
@@ -49,10 +49,7 @@ namespace Testa
         public override bool Equals(object obj)
         {
             return obj is PlayerImpl impl &&
-                   this.alias == impl.alias &&
-                   this.score == impl.score &&
-                   this.life == impl.life &&
-                   this.maxNumberOfLife == impl.maxNumberOfLife;
+                   this.alias == impl.alias;
         }
 
         public override int GetHashCode()
