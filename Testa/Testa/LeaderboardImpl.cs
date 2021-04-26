@@ -12,7 +12,7 @@ namespace Testa
 
         public void AddPlayer(string alias, int score) => this.ranking.Add(alias, score);
 
-        public void removePlayer(string alias)
+        public void RemovePlayer(string alias)
         {
             if (this.ranking.ContainsKey(alias))
             {

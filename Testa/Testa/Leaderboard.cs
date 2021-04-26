@@ -10,7 +10,7 @@ namespace Testa
 
         void AddPlayer(string alias, int score);
 
-        void removePlayer(string alias);
+        void RemovePlayer(string alias);
 
     }
 }
