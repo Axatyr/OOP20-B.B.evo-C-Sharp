@@ -12,6 +12,9 @@ namespace Totaro
         {
         }
 
+        /**
+        * create a ball with the wrong fields and check that exceptions are thrown.
+        */
         [Test]
         public void FailBallCreation()
         {
@@ -31,6 +34,9 @@ namespace Totaro
             Assert.Throws<InvalidOperationException>(() => ball.Build());
         }
 
+        /**
+        * create a ball and check that the builder sets all the fields correctly.
+        */
         [Test]
         public void BallCreation()
         {
@@ -48,6 +54,9 @@ namespace Totaro
             Assert.AreEqual(10, ball.Width);
         }
 
+        /**
+        *  put ball into the world. Update the time to see the movement of the ball.
+         */
         [Test]
         public void BallMovement()
         {
@@ -131,6 +140,10 @@ namespace Totaro
             }
         }
 
+        /**
+        * update time in the world and check that for equal time intervals, if the ball
+        * has a higher speed, it will have covered a greater space.
+        */
         [Test]
         public void BallSpeed()
         {
