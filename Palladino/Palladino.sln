@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palladino", "PalladinoTest\Palladino.csproj", "{6A7EF315-1734-4EBD-8B48-F1FD9E9F3B78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palladino", "Palladino\Palladino.csproj", "{81F32D7F-E164-49DD-A9D3-1DB1360A8538}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6A7EF315-1734-4EBD-8B48-F1FD9E9F3B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A7EF315-1734-4EBD-8B48-F1FD9E9F3B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A7EF315-1734-4EBD-8B48-F1FD9E9F3B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A7EF315-1734-4EBD-8B48-F1FD9E9F3B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81F32D7F-E164-49DD-A9D3-1DB1360A8538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81F32D7F-E164-49DD-A9D3-1DB1360A8538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81F32D7F-E164-49DD-A9D3-1DB1360A8538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81F32D7F-E164-49DD-A9D3-1DB1360A8538}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6D3C5C1F-00D6-469E-9D81-2CD5B7B08E6E}
+		SolutionGuid = {B9A11AE3-B1E3-4EC1-B084-5379E1F657DB}
 	EndGlobalSection
 EndGlobal

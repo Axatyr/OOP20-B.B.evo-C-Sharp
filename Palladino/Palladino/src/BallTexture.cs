@@ -9,17 +9,19 @@ namespace Palladino.src
         private readonly string ballPath;
         private readonly string ballTheme;
 
-        public BallTexture()
+        public BallTexture(string path, string theme)
         {
-            this.ballPath = "ballPath";
-            this.ballTheme = "ballTheme";
+            this.ballPath = path;
+            this.ballTheme = theme;
         }
 
+        /// <returns>return path of ball resource</returns>
         public string GetBallPath()
         {
             return ballPath;
         }
 
+        /// <returns>return name of ball resource</returns>
         public string GetBallTheme()
         {
             return ballTheme;

@@ -6,7 +6,6 @@ namespace Palladino.src
     {
         public double X { get; private set; }
         public double Y { get; private set; }
-
         public Position(double x, double y)
         {
             X = x;
@@ -21,6 +20,16 @@ namespace Palladino.src
         public static Position operator -(Position p1, Position p2)
         {
             return new Position(p1.X - p2.X, p1.Y - p2.Y);
+        }
+
+        public double GetX()
+        {
+            return X;
+        }
+
+        public double GetY()
+        {
+            return Y;
         }
 
         public override bool Equals(object obj)

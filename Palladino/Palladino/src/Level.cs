@@ -1,42 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using Palladino.src;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Palladino.src
 {
-    [Serializable]
-    public class Level
+    class Level
     {
         private readonly string levelName;
-        private readonly BrickBasic bricks;
+        private readonly ISet<BrickBasic> bricks;
         private readonly PersonalSounds music;
         private readonly BackgroundTexture background;
         private readonly BallTexture ball;
         private readonly PaddleTexture paddle;
 
-        /// <summary>
-        /// Set brick variable
-        /// </summary>
-        private readonly Position pos = new Position(0, 0);
-        private readonly int height = 1;
-        private readonly int width = 1;
-        private readonly int durability = 3;
-        private readonly string texturePath = "brickTexture";
-
-        public Level(string levelName)
+        public Level(string levelName, ISet<BrickBasic> bricks, PersonalSounds music, BackgroundTexture background, BallTexture ball, PaddleTexture paddle)
         {
             this.levelName = levelName;
-            this.bricks = new BrickBasic(pos, height, width, durability, texturePath);
-            this.music = new PersonalSounds();
-            this.background = new BackgroundTexture();
-            this.ball = new BallTexture();
-            this.paddle = new PaddleTexture();
+            this.bricks = bricks;
+            this.music = music;
+            this.background = background;
+            this.ball = ball;
+            this.paddle = paddle;
         }
 
         /// <returns> the pos of brick </return>
-        public Position GetBricks()
+        public ISet<BrickBasic> GetBrick()
         {
-            return bricks.BrickPos();
+            return bricks;
         }
 
         /// <returns> name of level </returns>
@@ -46,40 +38,45 @@ namespace Palladino.src
         }
 
         /// <returns> music path</returns>
-        public string GetMusic()
+        public PersonalSounds GetMusic()
         {
-            return music.GetMusicPath();
+            return music;
         }
 
         /// <returns> background path</returns>
-        public string GetBackground()
+        public BackgroundTexture GetBackground()
         {
-            return background.GetBackgroundPath();
+            return background;
         }
 
         /// <returns> ball path</returns>
-        public string GetBallTexture()
+        public BallTexture GetBallTexture()
         {
-            return ball.GetBallPath();
+            return ball;
         }
 
         /// <returns> paddle path</returns>
-        public string GetPaddleTexture()
+        public PaddleTexture GetPaddleTexture()
         {
-            return paddle.GetPaddlePath();
+            return paddle;
         }
 
-
-
-        public override bool Equals(object obj)
+        /// <summary>
+        /// check if levels are the same
+        /// </summary>
+        /// <param name="obj">level refers</param>
+        /// <returns>true if equal, false otherwise</returns>
+        public bool EqualLevel(Level obj)
         {
-            return obj is Level level &&
-                   levelName == level.levelName &&
-                   EqualityComparer<BrickBasic>.Default.Equals(bricks, level.bricks) &&
-                   EqualityComparer<PersonalSounds>.Default.Equals(music, level.music) &&
-                   EqualityComparer<BackgroundTexture>.Default.Equals(background, level.background) &&
-                   EqualityComparer<BallTexture>.Default.Equals(ball, level.ball) &&
-                   EqualityComparer<PaddleTexture>.Default.Equals(paddle, level.paddle);
+            if (obj is Level level && obj.levelName == level.levelName &&
+                obj.bricks == level.bricks && obj.music == level.music &&
+                obj.background == level.background && obj.ball == level.ball &&
+                obj.paddle == level.paddle)
+            {
+                return true;
+            }
+            return false;
+                   
         }
 
         public override int GetHashCode()

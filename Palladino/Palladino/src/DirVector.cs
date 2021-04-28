@@ -12,7 +12,6 @@ namespace Palladino.src
             X = x;
             Y = y;
         }
-
         public static DirVector operator +(DirVector d1, DirVector d2)
         {
             return new DirVector(d1.X + d2.X, d1.Y + d2.Y);
