@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Raso.Raso.src
+namespace Raso.src
 {
     public enum PowerUpType
     {
@@ -13,4 +13,15 @@ namespace Raso.Raso.src
         DAMAGE_UP,
         DAMAGE_DOWN
     }
+
+    public static class RandomPowerUpType
+    {
+        static Random rnd = new Random();
+        public static T RandomPowerUpTypeValue<T>()
+        {
+            var v = Enum.GetValues(typeof(PowerUpType));
+            return (T)v.GetValue(rnd.Next(v.Length));
+        }
+    }
+
 }

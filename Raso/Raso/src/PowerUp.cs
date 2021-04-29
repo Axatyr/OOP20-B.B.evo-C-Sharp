@@ -9,14 +9,14 @@ public class PowerUp : GameObject
         private double speedModifier { get; set; }
         private int lifeModifier { get; set; }
         private int damageModifier { get; set; }
-        private PowerUpType pwupType { get; set; }
-        private static Random randStatus = new Random();
+        public PowerUpType pwupType { get; set; }
         private string texturePath { get; set; }
 
         public PowerUp(Position pos, int height, int width, String tPath) :
             base(pos, new DirVector(0,-1), 0.2, height, width, new PowerUpComponentPhysics(), new ComponentInputEmpty())
         {
             texturePath = tPath;
+            pwupType = RandomPowerUpType.RandomPowerUpTypeValue<PowerUpType>();
         }
 
         public override void UpdateInput(IControllerInput controller)

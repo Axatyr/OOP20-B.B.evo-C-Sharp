@@ -17,6 +17,7 @@ namespace Raso.test
             Assert.AreEqual(0.2, powerUp.Speed);
             Assert.AreEqual(10, powerUp.Height);
             Assert.AreEqual(10, powerUp.Width);
+            Assert.NotNull(powerUp.pwupType);
         }
  
         [Test]
