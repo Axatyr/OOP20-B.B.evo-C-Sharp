@@ -41,6 +41,22 @@ namespace Raso.test
                 Assert.AreEqual(new Position(50, 48), ent.Position);
             }
 
-        }  
+        }
+
+        [Test]
+        public void PowerUpRemoval()
+        {
+            GameBoard board = new GameBoard();
+            PowerUp powerUp = new PowerUp(new Position(50, 50), 10, 10, "image/defaultPowerUp.png");
+            HashSet<PowerUp> pwups = new HashSet<PowerUp>();
+            //adds pwup to the GameBoard and checks if it is not null
+            pwups.Add(powerUp);
+            board.SetPwUps(pwups);
+            Assert.NotNull(pwups);
+            //remove pwup from the GameBoard and checks if it is empty
+            pwups.Remove(powerUp);
+            board.SetPwUps(pwups);
+            Assert.IsEmpty(pwups);
+        }
     }
 }

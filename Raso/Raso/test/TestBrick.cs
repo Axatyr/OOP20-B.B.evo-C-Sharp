@@ -50,11 +50,11 @@ namespace Raso.test
 
             GameBoard board = new GameBoard();
             HashSet<Brick> bricks = new HashSet<Brick>();
+            //adds brick to the GameBoard and checks if it is not null
             bricks.Add(brick);
             board.SetBricks(bricks);
-            //adds brick to the GameBoard and checks if it is not null
             Assert.NotNull(bricks);
-
+            //remove brick from the GameBoard and checks if it is empty
             bricks.Remove(brick);
             board.SetBricks(bricks);
             Assert.IsEmpty(bricks);
