@@ -4,13 +4,7 @@ using System.Text;
 
 namespace Raso.src
 {
-    public enum BrickStatus
-    {
-        NOT_DESTRUCTIBLE,
-        DESTRUCTIBLE,
-        DROP_POWERUP,
-        EMPTY
-    }
+    
     [Serializable]
     public class Brick : GameObject
     {

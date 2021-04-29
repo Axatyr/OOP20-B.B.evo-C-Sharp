@@ -5,15 +5,6 @@ namespace Raso.src
 {
 public class PowerUp : GameObject
     {
-    public enum PowerUpType
-    {
-        SPEED_UP,
-        SPEED_DOWN,
-        LIFE_UP,
-        LIFE_DOWN,
-        DAMAGE_UP,
-        DAMAGE_DOWN
-    }
         private long activeTime { get; set; }
         private double speedModifier { get; set; }
         private int lifeModifier { get; set; }
